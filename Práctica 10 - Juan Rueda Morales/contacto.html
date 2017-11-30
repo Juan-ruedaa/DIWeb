@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    
+    <title>Juan Rueda Morales - Práctica 10</title>
+</head>
+
+<body>
+    <div id="contenido">
+        <header>
+            <div id="cabecera"> 
+                    
+                <div id="logo"><canvas id="micanvas" width="64" height="64"></canvas></div>
+                <div id="titulo">Juan<b>Rueda</b></div>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./index.html">Artículos</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                        <li><a href="./index.html">Redes Sociales</a></li>
+                    </ul>
+                </nav>
+            </div>
+            </header>       
+        <div id="blog">
+            <main>
+                <article>
+                    <div id="formulario">
+                            <h2>Formulario de contacto</h2>
+                            <div id="camposFormulario">
+                                <form action="">
+                                        <div><label for="nombre">Nombre</label><input type="text" id="nombre" required></div>
+                                        <div><label for="apellido1">Apellido 1</label><input type="text" id="apellido1" required></div>
+                                        <div><label for="apellido2">Apellido 2</label><input type="text" id="apellido2" required></div>
+                                        <div><label for="email">Email</label><input type="email" placeholder="user@domain.com" id="email" required></div>
+                                        <div><label for="telefono">Teléfono</label><input type="tel" pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" id="telefono"></div>
+                                        <div><label for="fecha">Fecha de Nacimiento</label><input type="date" placeholder="" id="fecha"></div>
+                                        <div class="botonArticulo"><input type="submit" value="Enviar"></div>   
+                                </form>
+                            </div>
+                    </div>       
+                </article>
+                
+            </main>
+            <aside>
+                <div id="busqueda">
+                    <img src="images/lupa.png">
+                    <div id="barraBusqueda"><input type="search" placeholder="Busca aquí"></div>
+                </div>
+                <div id="cajaSobreMi">
+                    <div id="sobreMi">
+                        <div id="foto"><img src="images/foto.jpg"></div>
+                        <div id="texto">
+                                <h2>Sobre mí</h2>
+                                <p>Mi nombre es Juan Rueda Morales. Soy Técnico en Sistemas Microinformáticos y Redes y estudio un Grado Superior en Desarrollo de Aplicaciones Web.
+                                   <br/><br/> Apasionado de los sistemas Operativos Linux y del deporte.
+                                </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <div id="logosFooter">
+                <img src="images/logogc.jpg" id="logogc">
+                <img alt="Licencia de Creative Commons"  src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+            </div>
+
+            <div id="informacionFooter">
+                <p>Juan Rueda Morales</p>
+                <p>Desarrollo de Aplicaciones Web</p>
+            </div>
+
+            <div id="redesSociales">
+                <a href="https://github.com/Juan-ruedaa" target="_blank"><img src="images/git.png"></a>
+                <a href="https://twitter.com/JuanRueMor" target="_blank"><img src="images/twitter.png"></a>
+                <a href="https://www.linkedin.com/in/juan-rueda-morales-599241150/" target="_blank"><img src="images/linkedin.png"></a>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        
+            window.onload = function () {
+              
+                let contexto = cargaContextoCanvas('micanvas');
+        
+                if (contexto) {
+                  contexto.fillStyle = "#FFF";  
+                  contexto.beginPath();
+                  contexto.moveTo(18,22);
+                  contexto.lineTo(18,14);
+                  contexto.lineTo(2,30);
+                  contexto.lineTo(2,38);
+                  contexto.fill();
+        
+                  contexto.beginPath();
+                  contexto.moveTo(2,30);
+                  contexto.lineTo(2,38);
+                  contexto.lineTo(18,50);
+                  contexto.lineTo(18,42);  
+                  contexto.fill();
+        
+                  contexto.beginPath();
+                  contexto.moveTo(22,52);
+                  contexto.lineTo(27,52);
+                  contexto.lineTo(39,12);
+                  contexto.lineTo(34,12);
+                  contexto.fill(); 
+                  
+                  contexto.beginPath();
+                  contexto.moveTo(43,22);
+                  contexto.lineTo(43,14);
+                  contexto.lineTo(62,30);
+                  contexto.lineTo(62,38);
+                  contexto.fill();
+        
+                  contexto.beginPath();
+                  contexto.moveTo(62,30);
+                  contexto.lineTo(62,38);
+                  contexto.lineTo(43,50);
+                  contexto.lineTo(43,42);  
+                  contexto.fill();
+                }
+          }
+        
+        
+          function aleatorio(){
+            return Math.floor(Math.random() * 50);
+          }  
+        
+          function cargaContextoCanvas(idCanvas){
+            var elemento = document.getElementById(idCanvas);
+            if(elemento && elemento.getContext){
+              var contexto = elemento.getContext('2d');
+              if(contexto)
+                return contexto;
+            }
+            return FALSE;
+          }  
+          </script>
+
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+
+/**Caja pincipal*/
+#contenido{
+    display: grid;
+    grid-template-rows: 81px 11fr 2fr;
+    background-color: rgb(253, 253, 253);     
+    font-family: 'Open Sans', sans-serif;       
+    font-size: 16px;   
+}   
+
+#blog{
+    display: grid;
+    width: 100%;
+    grid-template-areas: "main aside";
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 1fr;
+    margin-top: 15px;   
+}
+
+
+/**Header*/
+#contenido>header{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 99, 71, 0.863);
+    color: white;
+    margin-bottom: 10px;
+}
+
+#contenido>header>#cabecera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%
+}
+
+#contenido header #cabecera #logo{
+    margin-left: 7px; 
+}
+
+#contenido header #cabecera #titulo{
+    margin: 0px 30px;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/**Nav*/
+#contenido header #cabecera nav{
+    margin-left: 150px;
+}
+
+#contenido header #cabecera nav ul{
+    *margin-left: 100px;
+}
+
+#contenido header #cabecera nav ul li{
+    display: inline-block;
+    margin: 2px;
+    padding: 5px;
+    font-size: 22px;
+}
+
+#contenido header #cabecera nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/**Main*/
+#blog>main{
+    width: 100%;     
+    margin-left: 50px;    
+}
+
+    /**Articulos del main*/
+    #blog>main>article{
+        display: flex;
+        flex-flow: column; 
+        justify-content: center;
+        align-items: center;                  
+        *border: 1px solid black;
+        transition: width 0.8s;
+        background-color: white;
+        box-shadow: 1px 1px 2px #888888, 0px 0px 1px #888888;
+        height: 90%;
+        width: 90%;
+    }
+
+    #blog>main>article>#formulario>h2{
+        font-family: 'Roboto', sans-serif;
+        font-size: 26px;
+    }
+
+    #blog>main>article>#formulario>#camposFormulario{
+        flex-grow: 1;
+        text-align: justify;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    #blog>main>article>#formulario>#camposFormulario>form>div>input{
+        flex-grow: 1;
+        text-align: justify;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid rgba(255, 99, 71, 0.863);
+        transition: transform 1s;
+        margin: 15px;
+    }
+
+    #blog>main>article>#formulario>#camposFormulario>form>div>input:focus{
+        flex-grow: 1;
+        text-align: justify;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid rgba(255, 99, 71, 0.863);
+        transform: scale(1.1,1);
+    }
+
+    #blog>main>article>#formulario>#camposFormulario>form>.botonArticulo{
+        display: flex;
+        flex-flow: row;
+        align-self: flex-end;
+        justify-content: flex-end;
+        margin: 15px 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 22px;
+    }
+
+    #blog>main>article>#formulario>#camposFormulario>form>.botonArticulo>input{
+        background-color: #ff6347dc;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 18px;
+        color: white;
+        transition: 0.6s;
+    }
+
+    #blog>main>article>#formulario>#camposFormulario>form>.botonArticulo>a:hover{
+        background-color: rgba(245, 36, 3, 0.938);
+    }
+
+
+/**Aside*/
+#blog>aside{
+    grid-area: aside;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    padding-left: 40px;
+}
+    /**Barra de búsqueda*/
+    #blog>aside>#busqueda{
+        *border: solid tomato;
+        flex-grow: 1;
+        flex-basis: 10%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    #blog>aside>#busqueda>img{
+        width: 35px;
+        margin-left: 57px;
+    }
+
+    #blog>aside>#busqueda>#barraBusqueda{
+        *border: solid black;
+        width: 50%;
+    }
+
+    #blog>aside>#busqueda>#barraBusqueda>input{
+        width: 65%;
+        height: 20px;
+        margin-left: 80px;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid rgba(255, 99, 71, 0.863);
+        transition: 1s;
+    }
+
+    #blog>aside>#busqueda>#barraBusqueda>input:focus{
+       width: 118%;
+       outline: none;
+       border-bottom: 2px solid rgba(255, 99, 71, 0.863);
+       margin-left: 20px;
+    }
+
+
+
+
+    /**SobreMi */    
+    #blog>aside>#cajaSobreMi{
+        *border: solid tomato;
+        flex-grow: 1;
+        flex-basis: 95%;
+        display: flex;
+        flex-flow: column;
+        *justify-content: center;
+        align-items: center;
+    }
+
+    #blog>aside>#cajaSobreMi>#sobreMi{
+        *border: solid black;
+        width: 90%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding: 13px;
+        margin-top:30px;
+        background-color: rgba(255, 99, 71, 0.788);
+        color: white;
+        box-shadow: 3px 3px 3px #888888; 
+    }
+
+    #blog>aside>#cajaSobreMi>#sobreMi>#foto{
+        flex-grow: 1;
+        flex-basis: 10%;
+    }
+
+    #blog>aside>#cajaSobreMi>#sobreMi>#foto>img{
+        padding: 15px;
+    }
+
+    #blog>aside>#cajaSobreMi>#sobreMi>#texto{
+        flex-grow: 1;
+        flex-basis: 60%;   
+    }
+
+    #blog>aside>#cajaSobreMi>#sobreMi>#texto>h2{
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 26px;
+    }
+
+
+
+/**Footer*/
+
+#contenido>footer{
+    background-color: #ff6347dc;
+    margin-top: 20px;
+    display: grid;
+    grid-template-areas: "texto texto"
+                         "imagenes rrss";
+    grid-gap:2px 1172px; 
+    padding-top: 10px;   
+    color: white;             
+}
+
+#contenido>footer>#informacionFooter{
+    grid-area: texto;
+    text-align: center;
+}
+
+#contenido>footer>#informacionFooter>p{
+    margin: 5px;
+}
+
+#contenido>footer>#logosFooter{
+    margin-left: 150px;
+    grid-area: imagenes;
+    width: 40%;
+    height: 60px; 
+}
+
+#contenido>footer>#logosFooter>#logogc{
+    width: 50px;
+    margin-right: 8px;
+}
+
+#contenido>footer>#redesSociales{
+    grid-area: rrss;
+    width: 55%;
+    height: 60px; 
+}
+
+#contenido>footer>#redesSociales>a>img{
+    height: 45px; 
+}
